@@ -1,0 +1,144 @@
+
+\section{Localisation}
+
+\begin{definition}
+	Let $R$ be a ring. A subset $S \subset R$ is a \emphdef{multiplicatively closed set} if $1 \in S$ and $s t \in S$ whenever $s, t \in S$.
+\end{definition}
+
+Let $R$ be a ring and $S \subset R$ a multiplicatively closed set. In the cartesian product $R \times S$ consider the relation
+\[
+	(a,s) \sim (a',s') \iff (a s' - a' s) t = 0 \text{ for some } t \in S
+\]
+which is an equivalence relation. It is reflexive since $(a,s) \sim (a,s)$ because $(a s - a s) 1 = 0$. If $(a,s) \sim (a',s')$ then $(a s' - a' s) t = (a' s - a s')(-t) = 0$ thus it is reflexive. Finally assume that $(a,s) \sim (a',s')$ and $(a',s') \sim (a'',s'')$, which is equivalent to 
+\[
+	\begin{aligned}
+		(a,s) \sim (a',s') 
+		&\iff (a s' - a' s) u = 0  
+		&
+		&\iff a s' u = a' s u \text{ for some } u \in S \\
+		(a',s') \sim (a'',s'')
+		&\iff (a' s'' - a'' s') v = 0 
+		&
+		&\iff a' s'' v = a'' s' v \text{ for some } u \in S 
+	\end{aligned}
+\]
+In order to prove that $(a,s) \sim (a'',s'')$ we have the following:
+\[
+	a s'' (s s' u v) = 
+	a s' u (s s'' v) = 
+	a' s u (s s'' v) = 
+	a' s'' v (s s u) = 
+	a'' s' v (s s u) = 
+	a'' s (s s' u v)
+\]
+By defining $w = s s' u v \in S$, we have shown that $(a s'' - a'' s) w = 0$ thus the relation is transitive. As we shall immediately see, it is far more natural to write the elements $(a,s) \in  R \times S$ as fractions $\dfrac{a}{s}$. With this notation, the equivalence relation is written as  
+\[
+	\frac{a}{s} \sim \frac{a'}{s'} \iff (a s' - a' s) t = 0 \text{ for some } t \in S
+\]
+With this in mind, we define the following set.
+
+\begin{definition}
+	Let $R$ be a ring and $S \subset R$ a multiplicatively closed set. We define the \emphdef{locatisation of $R$ at $S$} as
+	\[
+		S^{-1} R = 
+		\quotient{R \times S}{\sim} = 
+		\quotient{\left\{ \dfrac{a}{s} \mid a \in R, \, s \in S\right\}}{\sim}
+	\]
+\end{definition}
+
+\begin{prop}
+	Let $R$ be a ring $S \subset R$ a multiplicatively closed set. Then the localisation $S^{-1} R$ is a commutative ring with unit where sum and multiplication are defined as follows:
+	\[
+		\frac{a}{s} + \frac{a'}{s'} = \frac{a s' + a' s}{s s'} \qquad
+		\frac{a}{s} \vdot \frac{a'}{s'} = \frac{a a'}{s s'}
+	\]
+\end{prop}
+\begin{proof}
+	
+	First of all, note that if $u \in S$, then $\dfrac{a}{s} = \dfrac{a u}{s u}$ since $(a s u - a s u) 1 = 0$, so we may simplify the numerator and denominator of fractions as though we were working with school fractions as long as what we are simplyfing is an element of $S$.
+	
+	We begin by checking that $(S^{-1} R, +)$ is an abelian group. The sum is an internal operation because $a s' + a' s \in R$ and $s s' \in S$, so $\dfrac{a s' + a' s}{s s'} \in R \times S$. It is associative
+	\[
+		\left( \frac{a}{s} + \frac{a'}{s'} \right) + \frac{a''}{s''} = 
+		\frac{a s' + a' s}{s s'} + \frac{a''}{s''} = 
+		\frac{a s' s'' + a' s s'' + a'' s s'}{s s' s''} = 
+		\frac{a}{s} + \frac{a' s'' + a'' s'}{s' s''} = 
+		\frac{a}{s} + \left( \frac{a'}{s'} + \frac{a''}{s''} \right)
+	\]
+	The neutral element is $\dfrac{0}{1}$ since
+	\[
+		\frac{a}{s} + \frac{0}{1} = 
+		\frac{a \vdot 1 + 0 \vdot s}{s \vdot 1} = 
+		\frac{a \vdot 1}{s \vdot 1} = 
+		\frac{a}{s}
+	\]
+	The inverse of $\dfrac{a}{s}$ with respect to the sum is $\dfrac{-a}{s}$, 
+	\[
+		\frac{a}{s} + \frac{-a}{s} = 
+		\frac{a s -a s}{s s} = 
+		\frac{0}{s} =
+		\frac{0 \vdot s}{1 \vdot s} = 
+		\frac{0}{1}
+	\]
+	It is obvious that the sum is commutative since the sum in the numerator is performed in $(R,+)$, which is an abelian group. Note that an element $\dfrac{a}{s} \in S^{-1}A$ is actually an equivalence class of elements. Thus in order for the sum in $S^{-1} R$ to be well defined, it must not depend on the choice of representant, that is to say, if $\dfrac{a}{s} \sim \dfrac{a'}{s'}$ then $\dfrac{a}{s} + \dfrac{b}{t} \sim \dfrac{a'}{s'} + \dfrac{b}{t}$. To prove this, let $u \in S$ such that $(a s' - a' s) u = 0$, then
+	\[
+		\begin{aligned}
+			\dfrac{a}{s} + \dfrac{b}{t} \sim \dfrac{a'}{s'} + \dfrac{b}{t} &\Longleftrightarrow
+			\frac{a t + b s}{s t} \sim \frac{a' t + b s'}{s' t} \Longleftrightarrow
+			\left[ (a t + b s) s' t - (a' t + b s') s t \right] w = 0 \text{ for some } w \in S \\
+			&\Longleftrightarrow
+			( a s' - a' s ) t t w = 0 \text{ for some } w \in S
+		\end{aligned}
+	\]
+	By making $w = u$ we get $u t t \in S$ and $( a s' - a' s ) u t t = 0$. Hence the sum does not depend on the choice of representant and is well defined.
+	
+	Now we prove that $(S^{-1} R, \vdot)$ is a commutative semigroup with unit. Given $\dfrac{a}{s}, \dfrac{a'}{s'} \in S^{-1} R$ we have $\dfrac{a}{s} \vdot \dfrac{a'}{s'} = \dfrac{a a'}{s s'} \in S^{-1} R$ because $a a' \in R$ and $s s' \in S$, so multiplication is an internal operation. It is also associative
+	\[
+		\left( \frac{a}{s} \vdot \frac{a'}{s'} \right) \vdot \frac{a''}{s''} =
+		\frac{a a'}{s s'} \vdot \frac{a''}{s''} = 
+		\frac{a a' a''}{s s' s''} = 
+		\frac{a}{s} \vdot \frac{a' a''}{s' s''} = 
+		\frac{a}{s} \vdot \left( \frac{a'}{s'} \vdot \frac{a''}{s''} \right)
+	\]
+	and obviously commutative because the products in the numerator and denominator are computed in $R$,
+	\[
+		\frac{a}{s} \vdot \frac{a'}{s'} = 
+		\frac{a a'}{s s'} = 
+		\frac{a' a}{s' s} = 
+		\frac{a'}{s'} \vdot \frac{a}{s}
+	\]
+	The neutral element of $S^{-1} R$ with respect to multiplication is $\dfrac{1}{1}$, 
+	\[
+		\frac{a}{s} \vdot \frac{1}{1} = \frac{a \vdot 1}{s \vdot 1} = \frac{a}{s}
+	\]
+	As before, we have to check that multiplication does not depend on the choice of representant, that is to say, if $\frac{a}{s} \sim \frac{a'}{s'}$ then $\frac{a}{s} \vdot \frac{b}{t} \sim \frac{a'}{s'} \vdot \frac{b}{t}$. Let $u \in S$ such that $(a s' - a' s) u = 0$, then
+	\[
+		\frac{a}{s} \vdot \frac{b}{t} \sim \frac{a'}{s'} \vdot \frac{b}{t} \Longleftrightarrow
+		\frac{a b}{s t} \sim \frac{a' b}{s' t} \Longleftrightarrow
+		(a b s' t - a' b s t) w = 0 \text{ for some } w \in S
+	\]
+	
+	\colorbox{red}{Finish proof}
+\end{proof}
+
+Once we have a localisation $S^{-1} R$, we have a ring homomorphism $\varphi \colon R \rightarrow S^{-1} R$ sending $a \mapsto \frac{a}{1}$.
+
+\begin{prop}
+	The ring homomorphism $\varphi \colon R \rightarrow S^{-1} R$ is injective if, and only if, 
+\end{prop}
+
+\begin{theorem}[Universal property of localisation]
+	Let $A, B$ be rings and $S \subset A$ a multiplicatively closed set. Let $f \colon A \rightarrow B$ a ring homomorphism such that $f(s) \in B$ is a unit for every $s \in A$. Then there exists a unique ring homomorphism $g \colon S^{-1} A \rightarrow B$ that makes the following diagram commute:
+	\[
+		\begin{tikzcd}
+			&A \arrow[r, "\varphi"] \arrow[d, swap, "f"] &S^{-1} A \arrow[ld, "g"] \\
+			&B
+		\end{tikzcd}
+	\]
+\end{theorem}
+\begin{proof}
+		
+\end{proof}
+
+
+

@@ -1,0 +1,106 @@
+
+
+\section{Prime and maximal ideals}
+
+\begin{definition}
+	Let $R$ be a ring and $I \subset R$ a proper ideal.
+	\begin{enumeratedef}
+		\item We say that the ideal $I$ is \emphdef{prime} whenever $a b \in I$ implies $a \in I$ or $b \in I$.
+		\item We say that the ideal $I$ is \emphdef{maximal} if it is not contained in any other proper ideal, that is to say, if $J \subset R$ is a proper ideal and $I \subset J$, then $J = I$.
+	\end{enumeratedef}
+\end{definition}
+
+\begin{example}
+	Consider the ring $\z$ with the usual addition and multiplication. Then for every prime $p \in \z$, the ideal $(p) = p \z$ is maximal. Indeed, assume that $(p) \subset I$ for some proper ideal $I \subset \z$. Then $I = (a)$ for some $a \in \z$ because $\z$ is a principal ideal domain. Therefore $a \divides p$, but since $p$ is prime, there are two possibilities. The first one is $a = \pm 1$, that is to say, $(a) = \z$ which is not a proper ideal. The second one is $a = \pm p$, thus $(a) = (p)$. Hence $(p)$ is a maximal ideal.
+\end{example}
+
+\begin{prop}
+	Let $R$ be a ring and $I \subset R$ an ideal. If $I$ is a maximal ideal, then it is also a prime ideal.
+\end{prop}
+\begin{proof}
+	Let $a, b \in R$ such that $a b \in I$ and consider the ideal $J = (a) + I$. Since $I \subset J$ and $I$ is a maximal ideal, then either $J = I$ or $J = R$. In the former case we have that $a \in I$ and we are done. In the latter case, there exist $\lambda \in R$ and $c \in I$ satisfying $1 = \lambda a + c$, consequently $b = b \vdot 1 = \lambda a b + b c$. Since $\lambda a b \in I$ and $b c \in I$, we have that $b \in I$. In both cases we deduce that $I$ is a prime ideal.
+\end{proof}
+
+The following 
+
+\begin{prop}
+	Let $R$ be a ring and $I \subset R$ an ideal. Then the quotient ring $\quotient{R}{I}$ is an integral domain if, and only if, $I$ is a prime ideal.
+\end{prop}
+\begin{proof}
+	Assume that $\quotient{R}{I}$ is an integral domain. Given $a, b \in R$ satisfying $a b = 0$, we have that $\class{a b} = \class{a} \, \class{b} = \class{0}$, thus either $\class{a} = \class{0}$ or $\class{b} = \class{0}$, that is to say, $a \in I$ or $b \in I$, so $I$ is a prime ideal.
+	
+	Conversely, assume that $I$ is a prime ideal and let $\class{a}, \class{b} \in \quotient{R}{I}$ such that $\class{a b} = \class{a} \class{b} = \class{0}$. Then $a b \in I$, therefore either $a \in I$ or $b \in I$, which implies either $\class{a} = \class{0}$ or $\class{b} = \class{0}$, that is to say, $\quotient{R}{I}$ is an integral domain.
+\end{proof}
+
+\begin{prop}
+	Let $R$ be a ring and $I \subset R$ an ideal. Then the quotient ring $\quotient{R}{I}$ is an field if, and only if, $I$ is a maximal ideal.
+\end{prop}
+\begin{proof}
+	
+\end{proof}
+
+The previous propositions give an alternative way to prove that every maximal ideal is prime. If $\mathfrak{m}$ is a maximal ideal, then $\quotient{R}{\mathfrak{m}}$ is a field and, in particular, an integral domain, so $\mathfrak{m}$ must be a prime ideal.
+
+\begin{definition}
+	Let $R$ be a ring.
+	\begin{enumeratedef}
+		\item The \emphdef{spectrum of prime ideals} of $R$ is the set of prime ideals of $R$,
+		\[
+			\spec{R} = \{ \mathfrak{p} \subset R \mid \mathfrak{p} \text{ is a prime ideal} \} 
+		\]
+		\item The \emphdef{spectrum of maximal ideals} of $R$ is the set of maximal ideals of $R$,
+		\[
+			\spm{R} = \{ \mathfrak{m} \subset R \mid \mathfrak{m} \text{ is a maximal ideal} \} 
+		\]		
+	\end{enumeratedef}
+\end{definition}
+
+\begin{definition}
+	We say that a ring $R$ is \emphdef{local} if it has only one maximal ideal. It is often denoted by $(R,\mathfrak{m})$, where $\mathfrak{m} \subset R$ is the only maximal ideal. The ring $R$ is said to be \emphdef{semilocal} if it only has finitely many maximal ideals.
+\end{definition}
+
+\begin{example}
+	The ring $\z$ with the usual addition and multiplication is not local, since the ideal $p \z$ is maximal for every prime $p \in \z$.
+\end{example}
+
+The following proposition gives some useful characterisations for maximal ideals.
+
+\begin{prop}
+	Let $A$ be a ring and $I \subset A$ an ideal. If $A \setminus I \subset A^\ast$, then $A$ is a local ring and $I$ is its maximal ideal.
+\end{prop}
+\begin{proof}
+	Let $\pi \colon A \rightarrow \quotient{A}{I}$ be the projection on the quotient ring. Denote the equivalence class of an element $a \in A$ by $\class{a} = \pi(a)$. Take $\class{x} \in \quotient{A}{I}$ such that $\class{x} \neq \class{0}$. Then $x \not\in I$ thus $x$ must be a unit of $A$ since $x \in A \setminus A \subset A^\ast$, so there exists $y \in A$ such that $x y = 1$. By projecting on the quotient we have $\pi(x y) = \pi(x) \pi(y) = \class{x} \class{y} = \class{1}$. As $x \in \quotient{A}{I}$ is an arbitrary element different from zero, we deduce that $\quotient{A}{I}$ is a field, so $I$ must be a maximal ideal.
+	
+	Now let $J \subset A$ be another ideal. The projection $\pi \colon A \rightarrow \quotient{A}{I}$ is a surjective ring homomorphism, thus the set $\pi(J) \subset \quotient{A}{I}$ is an ideal. However, the only ideals of the field $\quotient{A}{I}$ are the zero ideal and the total ideal. In the first case $\pi(J) = 0$, thus $J \subset I$. In the second case $\pi(J) = \quotient{A}{I}$, which implies $J = R$. Thus every ideal $J \subset A$ is either contained in $I$ or is the total ideal, that is to say, $I$ is the only maximal ideal.
+\end{proof}
+
+\subsection{Extension and contraction of prime ideals}
+
+Let $f \colon A \rightarrow B$ be a ring homomorphism. It is natural to wonder whether prime and maximal ideals of $A$ are preserved under ideal extensions, and whether prime and maximal ideals of $B$ are preserved under ideal contraction. 
+
+\begin{prop}
+	Let $A$ and $B$ be rings and $f \colon A \rightarrow B$ a ring homomorphism. If $J \in \spec{B}$, then $J^c \in \spec{A}$.
+\end{prop}
+\begin{proof}
+	Let $a, b \in A$ such that $a b \in J^c$. Then $f(a b) = f(a) f(b) \in f(J^c) = J$ and, since $J \subset B$ is a prime ideal, either $f(a) \in J$ or $f(b) \in J$, which implies either $a \in J^c$ or $b \in J^c$, that is to say, $J^c \subset A$ is a prime ideal.
+\end{proof}
+
+This need not be the case with maximal ideals, that is to say, if $J \subset B$ is a maximal ideal, then $J^c \subset A$ need not be a maximal ideal.
+
+The same happens to prime ideals: if $I \subset A$ is a prime ideal then $I^e \subset B$ need not be prime.
+
+
+
+
+
+\subsection{Existence of maximal ideals}
+
+Firs
+
+\begin{theorem}
+	Let $A$ be a ring and $I \subset A$ an ideal. The there exists a maximal ideal $\mathfrak{m} \subset A$ such that $I \subset \mathfrak{m}$.
+\end{theorem}
+
+
+
+

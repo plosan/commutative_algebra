@@ -1,0 +1,64 @@
+
+\newtheoremstyle{normal}
+{0.5cm}                % Space above
+{}                % Space below
+{\upshape}        % Theorem body font % (default is "\upshape")
+{}                % Indent amount
+{\bfseries}       % Theorem head font % (default is \mdseries)
+{.}               % Punctuation after theorem head % default: no punctuation
+{ }               % Space after theorem head
+{}                % Theorem head spec
+\theoremstyle{normal}
+
+% Numbered environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{col}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{obs}[theorem]{Observation}
+
+% Unnumbered
+\newtheorem*{definition*}{Definition}
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{example*}{Example}
+\newtheorem*{exercise*}{Exercise}
+\newtheorem*{notation*}{Notation}
+\newtheorem*{obs*}{Observation}
+
+% Solution environment
+\newenvironment{solution}{\noindent\textit{Solution.}}{\hfill$\square$}
+
+% Enumerate for definition
+\newlist{enumeratedef}{enumerate}{3}
+\setlist[enumeratedef]{label=(\roman*)}
+
+% Enumerate for proposition
+\newlist{enumerateprop}{enumerate}{3}
+\setlist[enumerateprop]{label=(\arabic*), itemsep=0pt}
+
+% Enumerate for example
+\newlist{enumeratex}{enumerate}{3}
+\setlist[enumeratex]{label=\arabic*.}
+
+% Enumerate for exercise
+\newlist{enumeratexercise}{enumerate}{3}
+\setlist[enumeratexercise]{label=(\alph*)}
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+	\vspace{-\topsep}% remove the space after the theorem
+	\pushQED{\qed}%
+	\normalfont
+	\topsep0pt \partopsep0pt % no space before
+	\trivlist
+	\item[\hskip\labelsep
+	\itshape
+	#1\@addpunct{.}]\ignorespaces
+}{%
+	\popQED\endtrivlist\@endpefalse
+	\addvspace{6pt plus 6pt} % some space after
+}
+\makeatother

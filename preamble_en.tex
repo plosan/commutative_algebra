@@ -1,0 +1,152 @@
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{enumitem}
+
+\usepackage[a4paper, left = 30mm, right = 20mm, top = 30mm, bottom = 20mm]{geometry}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{empheq}
+\usepackage{physics}
+
+
+\usepackage[labelsep=period, labelfont=bf]{caption}
+
+\usepackage{fancyhdr}
+
+
+\usepackage{titling}
+\usepackage{placeins} % FloatBarrier
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+
+%\usepackage{eulervm}
+%\usepackage{tgtermes}
+\usepackage{lmodern}
+%\usepackage{mathptmx}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=blue,
+	urlcolor=black
+}
+
+
+% Estilo de página
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{15pt}
+\fancyhead[LE,RO]{\leftmark}
+\fancyhead[RE,LO]{\thepage}
+\setlength{\parskip}{0.25cm}
+
+% General commands
+\newcommand{\emphdef}[1]{\textbf{#1}}
+
+% Ring commands
+\newcommand{\spec}[1]{\mathrm{Spec}\,#1}
+\newcommand{\spm}[1]{\mathrm{Spm}\,#1}
+\newcommand{\maxideals}[1]{\mathrm{Max}\,#1}
+
+% Math commands
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\q}{\mathbb{Q}}
+\renewcommand{\real}{\mathbb{R}}
+\newcommand{\cplex}{\mathbb{C}}
+\renewcommand{\k}{\mathbb{K}}
+\newcommand{\f}{\mathbb{F}}
+
+\newcommand{\matrices}[2]{\mathcal{M}_{#1}(#2)}
+
+\newcommand{\car}[1]{\mathrm{char}\left(#1\right)}
+\newcommand{\class}[1]{\overline{#1}}
+\newcommand{\mcd}[1]{\mathrm{mcd}{#1}}
+\renewcommand{\mod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\fractions}[1]{\mathrm{Fr}(#1)}
+\renewcommand{\gcd}[1]{\mathrm{mcd} #1}
+\newcommand{\mcm}[1]{\mathrm{mcm} #1}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\degext}[2]{\left[ #1 \, : \, #2 \right]}
+\newcommand{\irr}{\mathrm{Irr}}
+\newcommand{\rg}[1]{\mathrm{rg}\left(#1\right)}
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+\newcommand{\scr}[1]{\left\langle #1 \right\rangle}
+
+% Comandos grupos
+\newcommand{\generated}[1]{\left\langle #1 \right\rangle}
+\newcommand{\symgroup}[1]{\mathcal{S}_{#1}}
+\newcommand{\indexgroup}[2]{\left[ #1 \, : \, #2 \right]}
+
+% Conjunto vacío
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+% Imagen
+\DeclareMathOperator{\image}{Im}
+
+% Abreviaciones
+\newcommand*{\eg}{e.g.\@\xspace}
+\newcommand*{\ie}{i.e.\@\xspace}
+
+% Conjunto cociente
+\newcommand{\quotient}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+
+% Eliminar Capitulo, solo número y nombre
+\makeatletter
+\def\@makechapterhead#1{%
+	\vspace*{50\p@}%
+	{\parindent \z@ \raggedright \normalfont
+		\ifnum \c@secnumdepth >\m@ne
+		\if@mainmatter
+		%\huge\bfseries \@chapapp\space \thechapter
+		\huge\bfseries \thechapter.\space%
+		%\par\nobreak
+		%\vskip 20\p@
+		\fi
+		\fi
+		\interlinepenalty\@M
+		\huge \bfseries #1\par\nobreak
+		\vskip 40\p@
+}}
+\makeatother
+
+% Numerales romanos en el texto
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+% cdot mas grande para productos en grupos
+\makeatletter
+\newcommand*\bcdot{\mathpalette\bcdot@{.5}}
+\newcommand*\bcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+% Ceil
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+% Floor
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Espacio antes y despues de ":"
+\DeclareMathSymbol{:}{\mathord}{operators}{"3A}
+
+% % Swap de phi y varphi
+%\let\temp\phi
+%\let\phi\varphi
+%\let\varphi\temp
+
+
+
+

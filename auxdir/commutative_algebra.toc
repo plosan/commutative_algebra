@@ -1,0 +1,8 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Categories}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Rings}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Prime and maximal ideals}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Extension and contraction of prime ideals}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Existence of maximal ideals}{7}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Localisation}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Chain conditions}{9}{section.2.3}%
