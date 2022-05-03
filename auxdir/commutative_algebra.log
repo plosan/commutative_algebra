@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.11)  30 APR 2022 00:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.11)  3 MAY 2022 23:24
 entering extended mode
 **./commutative_algebra.tex
 (commutative_algebra.tex
@@ -1079,37 +1079,38 @@ Chapter 1.
 
 ]
 Chapter 2.
-(chapters/chapter_02/prime_maximal_ideals.tex
-LaTeX Font Info:    Trying to load font information for U+euf on input line 42.
-
+(chapters/chapter_02/ideals.tex [5] [6]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 140
+.
 
 (C:\Users\Pedro\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-[5] [6]) (chapters/chapter_02/localisation.tex [7]
+))
+(chapters/chapter_02/prime_maximal_ideals.tex [7] [8] [9])
+(chapters/chapter_02/localisation.tex [10]
 Overfull \hbox (0.74516pt too wide) detected at line 92
 [][]
  []
 
-[8]) (chapters/chapter_02/chain_conditions.tex)) [9]
+[11]) (chapters/chapter_02/chain_conditions.tex [12] [13])) [14]
 (C:\PLS\Universidad\TFG\commutative_algebra_latex\auxdir\commutative_algebra.au
 x)
 Package rerunfilecheck Info: File `commutative_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: BB85CFB915EADB546B718E421A977588;1081.
+(rerunfilecheck)             Checksum: 0D43D9F1048F80649FDCD0A1FB2EBA20;3012.
  ) 
 Here is how much of TeX's memory you used:
- 27443 strings out of 478868
- 519169 string characters out of 2848809
- 836037 words of memory out of 3000000
- 44791 multiletter control sequences out of 15000+600000
+ 27536 strings out of 478868
+ 520438 string characters out of 2848809
+ 832105 words of memory out of 3000000
+ 44810 multiletter control sequences out of 15000+600000
  469007 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,15n,111p,773b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 107i,15n,111p,1046b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
-c}{C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.en
-c}{C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
+c}{C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
+:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C
 :/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C
-:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Us
+:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}<C:/Us
 ers/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm1
 0.pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbsy
 10.pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx
@@ -1117,18 +1118,20 @@ ers/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm1
 12.pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex
 10.pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
 10.pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi
-8.pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10
-.pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.p
-fb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.p
-fb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.p
-fb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pf
-b><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb
-><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
+6.pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8
+.pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.
+pfb><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pf
+b><C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb>
+<C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb>
+<C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
+<C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><
+C:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C
+:/Users/Pedro/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb>
 Output written on C:\PLS\Universidad\TFG\commutative_algebra_latex\PDF\commutat
-ive_algebra.pdf (9 pages, 216281 bytes).
+ive_algebra.pdf (14 pages, 288247 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 358 PDF objects out of 1000 (max. 8388607)
+ 113 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -95,11 +95,41 @@ The same happens to prime ideals: if $I \subset A$ is a prime ideal then $I^e \s
 
 \subsection{Existence of maximal ideals}
 
-Firs
+First of all, we should recall Zorn's lemma:
+
+\begin{theorem}[Zorn's lemma]
+	Let $S$ be a non-empty partially ordered set. If every non-empty totally ordered subset of $S$ has an upper bound, then $S$ has a maximal element.
+\end{theorem}
+
+\begin{theorem}[Existence of maximal ideals]
+	Let $R$ be a ring. Then $R$ contains a maximal ideal.
+\end{theorem}
+\begin{proof}
+	Let $S$ be the set of ideals of $R$. It is non-empty as it contains both the zero ideal $0$ and the unit ideal $R$, and a partially ordered set under the order relation of inclusion ($\subset$).
+	
+	Let $T \subset S$ be a non-empty totally ordered set of ideals of $R$, that is to say, given two different ideals $I, J \in T$, then either $I \subset J$ or $J \subset I$. We may see the elements of $T$ as an ascending chain $I_1 \subset \cdots \subset I_n \subset \cdots$ of ideals of $R$. In order to prove the existence of an upper bound of $T$ in $S$, consider the set $J = \bigcup_{I \in T} I$. We must show that $J$ is an ideal of $R$ and an upper bound for $T$.
+	
+	We begin by proving that $J$ is an ideal. Given $a, b \in J$, there exists a ``minimal'' ideal $I \in T$ such that $a, b \in I$ and either $a \not\in I$ or $b \not\in I$ for every $I' \subsetneq I$. Since $a - b \in I \subset J$, $J$ is a subgroup of the additive group of $R$. Now if $a \in I$, for all $\lambda \in R$ it is true that $\lambda a \in I \subset J$, so $J$ is an ideal. This constitutes an upper bound for $T$ in $S$. Indeed, for otherwise there would exist an ideal $I \in T$ such that $I \subsetneq J$, but this contradicts the construction of $J$.
+	
+	Since every non-empty totally ordered subset of $S$ has an upperbound, by Zorn's lemma $S$ has a maximal element, that is, a maximal ideal.
+\end{proof}
+
+The existence of maximal ideals theorem yields two immediate corollaries.
 
 \begin{theorem}
-	Let $A$ be a ring and $I \subset A$ an ideal. The there exists a maximal ideal $\mathfrak{m} \subset A$ such that $I \subset \mathfrak{m}$.
+	Let $R$ be a ring and $I \subset R$ an ideal. Then there exists a maximal ideal $\mathfrak{m} \subset R$ that contains $I$.
 \end{theorem}
+\begin{proof}
+	If $I$ is already a maximal ideal, then $\mathfrak{m} = I$. Therefore assume that $I$ is not a maximal ideal. Then the quotient ring $\quotient{R}{I}$ has a maximal ideal $\tilde{\mathfrak{m}}$ whose preimage $\mathfrak{m} = \pi^{-1}(\tilde{\mathfrak{m}}) \subset R$ is a maximal ideal containing $I$.
+\end{proof}
+
+\begin{col}
+	Let $R$ be a ring and let $a \in R \setminus R^\ast$. Then there exists a maximal ideal $\mathfrak{m}$ that contains $a$.
+\end{col}
+\begin{proof}
+	By applying the previous corollary to the principal ideal $I = (a)$, we deduce the existence of a maximal ideal $\mathfrak{m}$ containing $I$, thus containing $a$. 
+\end{proof}
+
 
 
 

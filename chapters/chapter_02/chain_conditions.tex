@@ -5,40 +5,100 @@ Let $A$ be a ring. In this section we focus our attention on ascending chains of
 
 \subsection{Noetherian rings}
 
+\begin{definition}
+	A commutative ring $R$ is said to be \emphdef{Noetherian} or to satisfy the \emphdef{ascending chain condition on ideals} (ACC on ideals) if every increasing chain of ideals in $R$ eventually stabilises, that is, whenever $I_1 \subset \cdots \subset I_n \subset \cdots$ is an increasing chain of ideals of $R$, then there is $m \geq 1$ such that $I_k = I_m$ for all $k \geq m$.
+\end{definition}
+
+\begin{example}
+	The ring of integers $\z$ with the usual sum and multiplication is Noetherian. Since $\z$ is a principal ideal domain, every ascending chain of ideals can be written as $(a_1) \subset \cdots \subset (a_n) \subset \cdots$ for $a_1, \ldots, a_n \in \z$. Furthermore, we may assume that all the $a_i$ are positive sine $(a_i) = (-a_i)$. Since $a_i$ divides $a_j$ for every $1 \leq j \leq i$, the ascending chain of ideals is equivalent to the descending chain $a_1 \geq \cdots \geq a_n \geq \cdots$ which is contained in $\z_{\geq 1}$. Such a chain cannot last indefinitely without becoming stationary at some point, hence the ascending chain of ideals eventually stabilises.
+\end{example}
+
+\begin{example}
+	Every field $k$ is Noetherian, for the only ideals it has are the zero ideal and the unit ideal.
+\end{example}
+
+The following proposition gives alternative characterisations of Noetherian rings:
+
 \begin{prop}
-	Let $A$ be a ring. The following conditions are equivalent:
+	Let $R$ be a ring. The following are equivalent:
 	\begin{enumerateprop}
-		\item \emph{Finite generation}: every ideal $I \subset A$ is finitely generated.
-		\item \emph{Ascending chain condition}: every ascending chain $I_1 \subseteq I_2 \subseteq \cdots \subseteq I_n \subseteq \cdots$ of ideals of $A$ stabilises, that is, there exists $m \geq 1$ such that $I_m = I_n$ for all $n \geq m$.
-		\item \emph{Maximality}: every non-empty set of ideals of $A$ has a maximal element with respect to inclusion.
+		\item $R$ is a Noetherian ring.
+		\item \emph{Finite generation}: every ideal $I \subset R$ is finitely generated.
+		\item \emph{Maximality}: every non-empty set $S$ of ideals of $R$ contains a maximal element under inclusion, that is, there exists an ideal $I \in S$ such that if $J \in S$ is another ideal satisfying $I \subset J$, then $I = J$.
 	\end{enumerateprop}
 \end{prop}
 \begin{proof}
-	contenidos...
+	$(1) \Rightarrow (2)$. Assume that there exists an ideal $I \subset R$ that is not finitely generated. Take an element $a_1 \in I$ and let $I_1 = (a_1)$. Since $I$ is not finitely generated, $I_1$ is properly contained in $I$, $I_1 \subsetneq I$, thus the set $I \setminus I_1$ is non-empty. Take $a_2 \in I \setminus I_1$ and let $I_2 = (a_1,a_2)$. Again we have $I_1 \subsetneq I_2 \subsetneq I$. More generally, construct the ideal $I_{n+1}$ for $n \geq 1$ as follows: given $I_n = (a_1, \ldots, a_n) \subsetneq I$, take $a_{n+1} \in I \setminus I_n$ and define $I_{n+1} = (a_1, \ldots, a_n, a_{n+1})$, which again satisfies $I_{n+1} \subsetneq I$. This process never ends, since the set $I \setminus I_n$ is non-empty for every $n \geq 1$. Consequently we have an ascending chain $I_1 \subsetneq \cdots \subsetneq I_n \subsetneq \cdots$ of ideals of $R$ that never stabilises, reaching a contradiction.
+	
+	$(2) \Rightarrow (3)$. 
+	
+	$(3) \Rightarrow (1)$. Let $I_1 \subset \cdots \subset I_n \subset \cdots$ be an ascending chain of ideals of $R$ and let $S = \{ I_i \mid i \geq 1 \}$ be the set of ideals in the chain. By the maximality hypothesis, $S$ contains a maximal element, thus there exists $j \geq 1$ such that if $I_j \subset I_i$ for any $i \geq 1$, then $I_i = I_j$. Consequently the chain stabilises as of $j$, so the ring is Noetherian. 
+	
 \end{proof}
 
-\begin{definition}
-	A ring $A$ is \emphdef{Noetherian} if it satisfies the conditions of the previous proposition.
-\end{definition}
+\begin{prop}
+	Let $R$ be a Noetherian ring and $I \subset R$ an ideal. Then the quotient ring $\quotient{R}{I}$ is Noetherian.
+\end{prop}
 
+\begin{prop}
+	Let $R$ be a Noetherian ring and $S \subset R$ a multiplicatively closed set. Then the localisation at $S$, $S^{-1} R$, is a Noetherian ring.
+\end{prop}
+
+\subsection{Hilbert's basis theorem}
 
 \begin{theorem}[Hilbert's basis theorem]
-	If $A$ is a Noetherian ring, then $A[x]$ is also Noetherian.
+	If $R$ is a Noetherian ring, then the polynomial ring $R[x]$ is also Noetherian.
 \end{theorem}
+
+\begin{col}
+	If $R$ is a Noetherian ring, then the polynomial ring $R[x_1, \ldots, x_n]$ is also Noetherian.
+\end{col}
 
 \subsection{Artinian rings}
 
+\begin{definition}
+	A commutative ring $R$ is said to be \emphdef{Artinian} or to satisfy the \emphdef{descending chain condition on ideals} (DCC on ideals) if every decreasing chain of ideals in $R$ eventually stabilises, that is, whenever $I_1 \supset \cdots \supset I_n \supset \cdots$ is a descending chain of ideals of $R$, then there is $m \geq 1$ such that $I_k = I_m$ for all $k \geq 1$.
+\end{definition}
+
 \begin{prop}
-	Let $A$ be a ring. The following conditions are equivalent:
+	Let $R$ be a ring. The following are equivalent:
 	\begin{enumerateprop}
-		\item \emph{Descending chanin condition}: every descending chain $I_1 \supseteq I_2 \supseteq \cdots \supseteq I_n \supseteq \cdots$ of ideals of $A$ stabilises, that is, there exists $m \geq 1$ such that $I_m = I_n$ for all $n \geq m$.
-		\item \emph{Minimality}: every non-empty set of ideals of $A$ has a minimal element with respect to inclusion. 
+		\item $R$ is an Artinian ring.
+		\item \emph{Minimality}: every non-empty set of ideals of $A$ has a minimal element under inclusion, that is, there exists an ideal $I \in S$ such that if $J \in S$ is another ideal satisfying $J \subset I$, then $J = I$. 
+	\end{enumerateprop}
+\end{prop}
+\begin{proof}
+	
+	$(2) \Rightarrow (1)$. Let $I_1 \supset \cdots \supset I_n \supset \cdots$ be a descending chain of ideals of $R$ and let $S = \{ I_i \mid i \geq 1 \}$. By the minimality assumption $S$ has a minimal element, so there exists an ideal $I_j \in S$, where $j \geq 1$, such that if $I_i \subset I_j$ then $I_i = I_j$. Consequently, for every $i \geq j$ we have $I_i = I_j$, so the chain stabilises as of $j$.
+	
+	$(1) \Rightarrow (2)$. 
+	
+\end{proof}
+
+\begin{enumerateprop}
+	Let $R$ be an Artinian ring.
+	\begin{enumerateprop}
+		\item If $\mathfrak{p} \subset R$ is a prime ideal, then $\mathfrak{p}$ is a maximal ideal.
+		\item $\maxideals{R}$ is a finite set.
 	\end{enumerateprop}
 \end{prop}
 
+\subsection{Dimension????}
+
 \begin{definition}
-	A ring $A$ is \emphdef{Artinian} if it satisfied the conditions of the previous proposition.
+	Let $R$ be a ring. A chain of prime ideals of length $n \geq 1$ is
+	\[
+		\mathfrak{p}_0 \subsetneq \mathfrak{p}_1 \subsetneq \cdots \subsetneq \mathfrak{p}_n
+	\]
+	where $\mathfrak{p}_i \in \spec{R}$ for every $i = 0, \ldots, n$.
 \end{definition}
+
+\begin{definition}
+	Let $R$ be a ring. 
+	
+\end{definition}
+
+
 
 
 
